@@ -14,6 +14,7 @@ public class CodeBlock {
             int a2 = a1+1;
             {
                 int a3 = a2+1;
+                System.out.println("a3="+a3);
             }
             {
                 int a3 = a2+10;
