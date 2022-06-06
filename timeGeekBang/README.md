@@ -46,8 +46,11 @@
     - ```java
       Math.random()  //生成随机数，随机数在0到1之间[0,1)，类型是double
       ```
-  
-  - 
+  - ```java
+    Scanner in = new Scanner(System.in)   //连接标准输入，在我们的例子中也就是命令行。in也是变量，只是不是基本类型
+    in.nextLine()                           //可以从命令行读取一行字符串
+    in.nextInt()                         //可以从命令行读取一个正整数
+    ```
 
 #### 概念理解
 

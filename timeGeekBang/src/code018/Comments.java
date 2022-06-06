@@ -26,8 +26,28 @@ public class Comments {
 
         int mod = rangeEnd - rangeStart;
 
-        int bigRandom = (int) (Math.random() * (rangeEnd * 100));
+        if (rangeStart < 0 || rangeEnd < 0) {
+            System.out.println("开始和结束必须是正数或者是零");
+        }
 
-        System.out.println("mod="+mod+",bigrandom="+bigRandom);
+        if (mod <= 1) {
+            System.out.println("非法的数字范围：(" + rangeStart + "，" + rangeEnd + ")");
+        }
+        for (int i = 0; i < 50; i++) {
+
+
+//            random*100为随机生成[0,100)以内的数字
+            int bigRandom = (int) (Math.random() * (rangeEnd * 100));
+
+            int numberToGuess = (bigRandom % mod) + rangeStart;
+
+            if (numberToGuess <= rangeStart) {
+                numberToGuess = rangeStart + 1;
+            } else if (numberToGuess >= rangeEnd) {
+                numberToGuess = rangeEnd - 1;
+            }
+
+            System.out.println("mod=" + mod + ",bigrandom=" + bigRandom + ",numberToGuess=" + numberToGuess);
+        }
     }
 }
