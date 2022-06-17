@@ -1,16 +1,22 @@
 package com.mp.first.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
+@TableName("mp_user")
 public class User {
 
     //    主键
-    private Long id;
+    @TableId
+    private Long userId;
     //    姓名
-    private String name;
+    @TableField("name")
+    private String realName;
     //    年龄
     private Integer age;
     //    邮箱

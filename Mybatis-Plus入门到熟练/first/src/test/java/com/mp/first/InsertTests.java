@@ -22,8 +22,9 @@ class InsertTests {
     @Test
     public void insert(){
         User user = new User();
-        user.setName("留名强");
-        user.setAge(31);
+        user.setRealName("向东");
+        user.setAge(26);
+        user.setEmail("xiangd@baomidou.com");
         user.setManagerId(1088248166370832385l);
         user.setCreateTime(LocalDateTime.now());
         int i = userMapper.insert(user);
