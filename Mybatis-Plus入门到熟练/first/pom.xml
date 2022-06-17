@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mp</groupId>
-    <artifactId>first</artifactId>
+    <artifactId>crud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>first</name>
     <description>first</description>

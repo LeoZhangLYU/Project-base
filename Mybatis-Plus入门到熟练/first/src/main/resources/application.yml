@@ -4,3 +4,10 @@ spring:
     url: jdbc:mysql://localhost:3308/mybatisplus?useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: 123456
+
+logging:
+  level:
+    root: warn
+    com.mp.first.dao: trace
+  pattern:
+    console: '%p%m%n'
