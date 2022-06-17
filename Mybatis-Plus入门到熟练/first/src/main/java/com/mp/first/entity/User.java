@@ -25,4 +25,20 @@ public class User {
     private Long managerId;
     //    创建时间
     private LocalDateTime createTime;
+//    方法1
+    private transient String remark1;
+//    方法2
+    private static String remark2;
+
+    public static String getRemark2() {
+        return remark2;
+    }
+
+//    方法3
+    @TableField(exist = false)
+    public String remark3;
+
+    public static void setRemark2(String remark2) {
+        User.remark2 = remark2;
+    }
 }
