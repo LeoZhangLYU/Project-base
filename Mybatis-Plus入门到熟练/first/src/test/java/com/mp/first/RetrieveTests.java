@@ -97,5 +97,26 @@ class RetrieveTests {
         userList.forEach(System.out::println);
     }
 
-    
+    /**
+     * 5、姓名为王姓，并且（年龄小于40或邮箱不为空）
+     */
+    @Test
+    public void selectByWrapper5() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.likeRight("name","王").and(wq->wq.lt("age","40").or().isNotNull("email"));
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
+
+    /**
+     * 6、姓名为王姓或者（年龄小于40并且年龄大于20并且邮箱不为空）
+     */
+    @Test
+    public void selectByWrapper6() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.likeRight("name","王").or(wq->wq.lt("age",40).gt("age",20).isNotNull(
+                "email"));
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
 }
