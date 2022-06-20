@@ -11,12 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.lang.reflect.Array;
+import java.sql.Array;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -116,6 +113,39 @@ class RetrieveTests {
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.likeRight("name","王").or(wq->wq.lt("age",40).gt("age",20).isNotNull(
                 "email"));
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
+
+    /**
+     * 7、（年龄小于40或邮箱不为空）并且名字为王姓
+     */
+    @Test
+    public void selectByWrapper7() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.nested(wq->wq.lt("age",40).isNotNull("email")).likeRight("name","王");
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
+
+    /**
+     * 8、年龄为30、31、34、35
+     */
+    @Test
+    public void selectByWrapper8() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.in("age",Arrays.asList(30,31,34,35));
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
+
+    /**
+     * 9、只返回满足条件的其中一条语句即可
+     */
+    @Test
+    public void selectByWrapper9() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.in("age",Arrays.asList(31,30,34,35)).last("limit 1");
         List<User> userList = userMapper.selectList(userQueryWrapper);
         userList.forEach(System.out::println);
     }
