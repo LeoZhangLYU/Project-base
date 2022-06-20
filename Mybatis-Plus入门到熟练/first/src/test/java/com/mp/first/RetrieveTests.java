@@ -84,4 +84,18 @@ class RetrieveTests {
         List<User> userList = userMapper.selectList(userQueryWrapper);
         userList.forEach(System.out::println);
     }
+
+    /**
+     * 4.创建日期为2019年2月14日并且直属上级为王姓
+     */
+    @Test
+    public void selectByWrapper4() {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.apply("date_format(create_time,'%Y-%m-%d')={0}","2019-02-14")
+                .inSql("manager_id","select id from user where name like '王%'");
+        List<User> userList = userMapper.selectList(userQueryWrapper);
+        userList.forEach(System.out::println);
+    }
+
+    
 }
