@@ -3,7 +3,7 @@ import logo from './assets/images/logo.svg';
 
 
 // 引入Home组件
-// import Home from './components/Home'
+import Home from './components/Home'
 // 引入News组件
 import News from './components/News';
 
@@ -13,6 +13,9 @@ function App() {
   return (
     <div className="App">
       你好，react，根组件
+      <hr />
+      <Home></Home>
+      <hr />
       <News></News>
     </div>
   );
