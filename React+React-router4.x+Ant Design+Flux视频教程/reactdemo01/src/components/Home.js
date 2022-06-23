@@ -21,13 +21,42 @@ class Home extends Component {
         // 定义数据
         this.state = {
             msg: "我是一个Home组件",
-            title: "我是一个title",
-            red: "red",
-            style:{
-                color:"red",
-                fontSize:"40px"
-            }
+            message: "我是一个Message",
+            username: "itying"
         }
+
+        // 第二种改变this的方法
+        this.getMessage = this.getMessage.bind(this);
+    }
+
+    run() {
+        alert("我是一个run方法")
+    }
+
+    getData() {
+        alert(this.state.msg)
+
+    }
+    getMessage() {
+        alert(this.state.message)
+    }
+    // 第三种改变this指向的方法
+    getUserName = () => {
+        alert(this.state.username)
+    }
+
+    setMeg = () => {
+        //改变state的值
+        this.setState({
+            msg: "我是一个Home组件,这是改变后的值"
+        })
+    }
+
+    setUsername = (str) => {
+        //改变state的值
+        this.setState({
+            username: str
+        })
     }
 
     // jsx：js与html混写
@@ -35,23 +64,23 @@ class Home extends Component {
         return (
             <div>
                 <h2>{this.state.msg}</h2>
-
-                <div title="1111">我是一个div</div>
+                <h2>{this.state.username}</h2>
+                <button onClick={this.run}>执行方法</button>
                 <br />
-                <div id="box" title={this.state.title}>我是一个div    box</div>
                 <br />
-                <div className='red'>我是一个红色的div</div>
+                <button onClick={this.getData.bind(this)}>获取数据----第一种:改变this指向的方法</button>
                 <br />
-                <div className={this.state.red}>我是一个红色的div 111</div>
-
-                <br/>
-                <label htmlFor="name">姓名</label>
-                <input id="name" />
-
-                <br/>
-                <div style={{"color":"red"}}>我是一个红色的div 行内样式</div>
-                <br/>
-                <div style={this.state.style}>我是一个红色的div 行内样式</div>
+                <br />
+                <button onClick={this.getMessage}>获取数据----第二种:改变this指向的方法</button>
+                <br />
+                <br />
+                <button onClick={this.getUserName}>获取数据----第三种:改变this指向的方法</button>
+                <br />
+                <br />
+                <button onClick={this.setMeg}>改变state里面的值</button>
+                <br />
+                <br />
+                <button onClick={this.setUsername.bind(this,"张三")}>执行方法传值</button>
             </div >
         )
     }
