@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/images/logo.svg';
+// import './assets/css/App.css';
+
+
+// 引入Home组件
+// import Home from './components/Home'
+// 引入News组件
+import News from './components/News';
 
 function App() {
+
+  //jsx：js与html混写
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      你好，react，根组件
+      <News></News>
     </div>
   );
 }
