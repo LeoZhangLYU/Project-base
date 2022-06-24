@@ -1,4 +1,6 @@
 import React from "react";
+// 引入自定义模块
+import storage from "../model/storage";
 import "../assets/css/index.css";
 
 class TodoList extends React.Component {
@@ -6,22 +8,22 @@ class TodoList extends React.Component {
     super(props);
     this.state = {
       list: [
-        // {
-        //   title: "录制ionic",
-        //   checked: true,
-        // },
-        // {
-        //   title: "录制nodejs",
-        //   checked: false,
-        // },
-        // {
-        //   title: "录制egg.js",
-        //   checked: true,
-        // },
-        // {
-        //   title: "录制vue",
-        //   checked: false,
-        // },
+        {
+          title: "录制ionic",
+          checked: true,
+        },
+        {
+          title: "录制nodejs",
+          checked: false,
+        },
+        {
+          title: "录制egg.js",
+          checked: true,
+        },
+        {
+          title: "录制vue",
+          checked: false,
+        },
       ],
     };
   }
@@ -39,6 +41,9 @@ class TodoList extends React.Component {
       this.setState({
         list: tempList,
       });
+      //   执行缓存数据
+      storage.set("todoList", tempList);
+      //   localStorage.setItem("todoList", JSON.stringify(tempList));
     }
   };
   removeData = (key) => {
@@ -47,6 +52,8 @@ class TodoList extends React.Component {
     this.setState({
       list: tempList,
     });
+    //   执行缓存数据
+    storage.set("todoList", tempList);
   };
   checkboxChange = (key) => {
     var list = this.state.list;
@@ -54,8 +61,20 @@ class TodoList extends React.Component {
     this.setState({
       list: list,
     });
+    //   执行缓存数据
+    storage.set("todoList", list);
   };
 
+  //   生命周期函数 页面加载就会触发
+  componentDidMount() {
+    // 获取缓存的数据
+    var list = storage.get("todoList");
+    if (list) {
+      this.setState({
+        list: list,
+      });
+    }
+  }
   render() {
     return (
       <div className="TodoList">
