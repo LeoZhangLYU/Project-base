@@ -9,8 +9,8 @@ import logo from './assets/images/logo.svg';
 
 // import Home05 from './components/Home05';
 // import List from './components/List';
-import TodeList from './components/TodeList';
-
+// import TodeList from './components/TodeList';
+import ReactForm from './components/ReactForm';
 
 function App() {
 
@@ -20,7 +20,8 @@ function App() {
       你好，react，根组件
       {/* <Home05></Home05> */}
       {/* <List></List> */}
-      <TodeList></TodeList>
+      {/* <TodeList></TodeList> */}
+      <ReactForm></ReactForm>
     </div>
   );
 }
