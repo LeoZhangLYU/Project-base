@@ -19,6 +19,13 @@ code {
   width: 100px;
 }
 
+.TodoList header {
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: aliceblue;
+  background-color: black;
+}
 .TodoList ul li {
-  height: 30px;
+  height: 60px;
 }

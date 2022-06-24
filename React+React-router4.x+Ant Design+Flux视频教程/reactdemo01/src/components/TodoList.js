@@ -5,43 +5,105 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "1111",
-      list: [],
+      list: [
+        // {
+        //   title: "录制ionic",
+        //   checked: true,
+        // },
+        // {
+        //   title: "录制nodejs",
+        //   checked: false,
+        // },
+        // {
+        //   title: "录制egg.js",
+        //   checked: true,
+        // },
+        // {
+        //   title: "录制vue",
+        //   checked: false,
+        // },
+      ],
     };
   }
 
   title = React.createRef("");
-  addData = () => {
-    // alert(this.title.current.value);
+  addData = (event) => {
+    // 按下回车时增加
+    if (event.keyCode == 13) {
+      var tempList = this.state.list;
+      tempList.push({
+        title: this.title.current.value,
+        checked: false,
+      });
+      this.title.current.value = "";
+      this.setState({
+        list: tempList,
+      });
+    }
+  };
+  removeData = (key) => {
     var tempList = this.state.list;
-    tempList.push(this.title.current.value);
-    this.title.current.value = "";
+    tempList.splice(key, 1);
     this.setState({
       list: tempList,
     });
   };
-  removeData = (key) => {
-    var tempList = this.state.list;
-    tempList.pop(key);
+  checkboxChange = (key) => {
+    var list = this.state.list;
+    this.state.list[key].checked = !this.state.list[key].checked;
     this.setState({
-      list: tempList,
+      list: list,
     });
   };
 
   render() {
     return (
       <div className="TodoList">
-        <h2>React TodeList案例演示</h2>
-        <input ref={this.title} /> <button onClick={this.addData}>增加+</button>
+        <header>
+          TodeList:
+          <input ref={this.title} onKeyUp={this.addData} />
+        </header>
+        <h2>待办事项</h2>
         <hr />
         <ul>
           {this.state.list.map((value, key) => {
-            return (
-              <li key={key}>
-                {value}-----------
-                <button onClick={this.removeData.bind(this, key)}>删除</button>
-              </li>
-            );
+            if (!value.checked) {
+              return (
+                <li key={key}>
+                  <input
+                    type="checkbox"
+                    checked={value.checked}
+                    onChange={this.checkboxChange.bind(this, key)}
+                  />
+                  {value.title}-------------
+                  <button onClick={this.removeData.bind(this, key)}>
+                    删除
+                  </button>
+                </li>
+              );
+            }
+          })}
+        </ul>
+        <h2>已完成事项</h2>
+        <hr />
+        <ul>
+          {this.state.list.map((value, key) => {
+            if (value.checked) {
+              return (
+                <li key={key}>
+                  <input
+                    key={key}
+                    type="checkbox"
+                    checked={value.checked}
+                    onChange={this.checkboxChange.bind(this, key)}
+                  />
+                  {value.title}-------------
+                  <button onClick={this.removeData.bind(this, key)}>
+                    删除
+                  </button>
+                </li>
+              );
+            }
           })}
         </ul>
       </div>
