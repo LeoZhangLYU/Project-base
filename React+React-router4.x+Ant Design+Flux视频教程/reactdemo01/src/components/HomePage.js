@@ -1,7 +1,9 @@
 import React from "react";
 
 // import Header from "./Header";
-import DefaultPropsHeader from "./DefaultPropsHeader";
+// import DefaultPropsHeader from "./DefaultPropsHeader";
+import Axios from "./Axios";
+import FetchJsonp from "./FetchJsonp";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -16,10 +18,12 @@ class HomePage extends React.Component {
     return (
       <div>
         {/* <Header title={this.state.title}></Header> */}
-        <DefaultPropsHeader
+        {/* <DefaultPropsHeader
           title={this.state.title}
           num={this.state.count}
-        ></DefaultPropsHeader>
+        ></DefaultPropsHeader> */}
+        <Axios></Axios>
+        <FetchJsonp></FetchJsonp>
         <br />
         <hr />
         <h2>这是首页组件的内容</h2>
