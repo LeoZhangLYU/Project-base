@@ -1,4 +1,5 @@
 import logo from "./assets/images/logo.svg";
+import { Routes, Route, Link } from "react-router-dom";
 // import './assets/css/App.css';
 
 // 引入Home组件
@@ -14,20 +15,36 @@ import logo from "./assets/images/logo.svg";
 
 import HomePage from "./components/HomePage";
 import NewsPage from "./components/NewsPage";
+import ProductPage from "./components/ProductPage";
 function App() {
   //jsx：js与html混写
   return (
-    <div className="App">
-      你好，react，根组件
-      <HomePage></HomePage>
-      {/* <NewsPage></NewsPage> */}
-      {/* <Home05></Home05> */}
-      {/* <List></List> */}
-      {/* <TodeList></TodeList> */}
-      {/* <ReactForm></ReactForm> */}
-      {/* <TodoList></TodoList> */}
-      {/* <Header></Header> */}
-    </div>
+    <>
+      <div className="App">
+        {/* 你好，react，根组件  */}
+        {/* <HomePage></HomePage> */}
+        {/* <NewsPage></NewsPage> */}
+        {/* <Home05></Home05> */}
+        {/* <List></List> */}
+        {/* <TodeList></TodeList> */}
+        {/* <ReactForm></ReactForm> */}
+        {/* <TodoList></TodoList> */}
+        {/* <Header></Header> */}
+      </div>
+      <hr />
+      <nav>
+        <Link to="/">首页</Link>
+        <Link to="/news">新闻</Link>
+        <Link to="/product">商品</Link>
+      </nav>
+      <hr />
+      <Routes>
+        <Route exact path="/" element={<HomePage></HomePage>} />
+        {/* exact表示严格匹配 */}
+        <Route path="/news" element={<NewsPage></NewsPage>} />
+        <Route path="/product" element={<ProductPage></ProductPage>} />
+      </Routes>
+    </>
   );
 }
 
