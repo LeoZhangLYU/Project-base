@@ -16,6 +16,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import NewsPage from "./components/NewsPage";
 import ProductPage from "./components/ProductPage";
+import NewsContent from "./components/NewsContent";
+import ProductContent from "./components/ProductContent";
+
 function App() {
   //jsx：js与html混写
   return (
@@ -43,6 +46,11 @@ function App() {
         {/* exact表示严格匹配 */}
         <Route path="/news" element={<NewsPage></NewsPage>} />
         <Route path="/product" element={<ProductPage></ProductPage>} />
+        <Route path="/content/:aid" element={<NewsContent></NewsContent>} />
+        <Route
+          path="/productcontent"
+          element={<ProductContent></ProductContent>}
+        />
       </Routes>
     </>
   );
