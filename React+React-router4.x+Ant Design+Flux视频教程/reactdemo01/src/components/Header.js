@@ -36,4 +36,7 @@ class Header extends React.Component {
   }
 }
 
+Header.defaultProps = {
+  title: "标题",
+};
 export default Header;

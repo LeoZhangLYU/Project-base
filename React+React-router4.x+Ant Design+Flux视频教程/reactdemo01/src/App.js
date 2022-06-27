@@ -19,8 +19,8 @@ function App() {
   return (
     <div className="App">
       你好，react，根组件
-      {/* <HomePage></HomePage> */}
-      <NewsPage></NewsPage>
+      <HomePage></HomePage>
+      {/* <NewsPage></NewsPage> */}
       {/* <Home05></Home05> */}
       {/* <List></List> */}
       {/* <TodeList></TodeList> */}
