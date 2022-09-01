@@ -81,9 +81,7 @@ print(list1.reversed);    //(王五, 李四, 张三)
 print(list1.reversed.toList());    //[王五, 李四, 张三]
 ```
 
-##### List
 
-###### 哈哈
 
 
 
