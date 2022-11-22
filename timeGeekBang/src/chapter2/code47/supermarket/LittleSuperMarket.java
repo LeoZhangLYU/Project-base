@@ -1,6 +1,7 @@
 package chapter2.code47.supermarket;
 
 public class LittleSuperMarket {
+
     public String superMarketName;
     public String address;
     public int parkingCount;
@@ -9,6 +10,7 @@ public class LittleSuperMarket {
     public int[] merchandiseSold;
 
     public MerchandiseV2 getBiggestProfitMerchandise() {
+        System.out.println("LittleSuperMarket的getBiggestProfitMerchandise方法使用的对象是" + this);
         MerchandiseV2 curr = null;
         for (int i = 0; i < merchandises.length; i++) {
             MerchandiseV2 m = merchandises[i];

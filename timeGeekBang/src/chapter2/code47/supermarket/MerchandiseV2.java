@@ -22,6 +22,24 @@ public class MerchandiseV2 {
         return profit;
     }
 
+    public void duplicateName(int count) {
+        this.count = 999;
+        count = 999;
+    }
+
+    public void addCount(int count) {
+        // >> TODO 方法里隐藏着一个this自引用，指向调用这个方法的对象
+        // >> TODO 使用一个对象调用方法，也叫做在这个对象上调用方法。因为方法可以访问这个对象的值
+        // >> TODO 访问一个成员变量的完整形态，是“this.成员变量的名字”。
+        this.count += count;
+        System.out.println("MerchandiseV2的addCount方法使用的对象是：" + this);
+    }
+
+    public boolean hasEnoughCountFor(int count) {
+        System.out.println("MerchandiseV2的hasEnoughCountFor方法使用的对象是：" + this);
+        return this.count >= count;
+    }
+
     // >> TODO 参数是定义在方法名字后面的括号里的
     // >> TODO 参数定义的规范和变量一样，都是类型名字加标识符，这里的标识符我们叫做参数名。
     // >> TODO 方法体中的代码可以使用参数
