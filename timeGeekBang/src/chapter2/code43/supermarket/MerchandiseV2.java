@@ -66,4 +66,57 @@ public class MerchandiseV2 {
     public int getIntSoldPrice() {
         return (int) soldPrice;
     }
+
+    // >> TODO 参数是定义在方法名称后面的括号里的
+    // >> TODO 参数定义的规范和变量一样，都是类型名字加标识符，这里的标识符我们叫做参数名
+    // >> TODO 方法体中的代码可以使用参数
+    // >> TODO 参数的值在调用方法的时候需要给出，有的资料叫做实参（实际参数）
+    //    TODO 对应的，方法定义这里的参数，叫做形参（形式参数）
+
+    /**
+     * 第二件半价函数
+     */
+    public double buyHalf(int countToBuy) {
+        if (count < countToBuy) {
+            System.out.println("商品库存不足");
+            return -1;
+        }
+
+        System.out.println("商品单价为" + purchasePrice);
+        int fullPriceCount = countToBuy / 2 + countToBuy % 2;
+        int halfPriceCount = countToBuy - fullPriceCount;
+
+        double totalCost = fullPriceCount * purchasePrice + halfPriceCount * purchasePrice / 2;
+        count -= countToBuy;
+        return totalCost;
+    }
+
+    // >> TODO 一个方法可以有多个参数，多个参数之间用逗号隔开
+    public double bugAndPrintLeft(int countToBuy, boolean printLeft) {
+        if (count < countToBuy) {
+            System.out.println("商品库存不够");
+            if (printLeft) {
+                System.out.println("商品剩余库存为" + count);
+            }
+            return -1;
+        }
+
+        System.out.println("商品单价为" + purchasePrice);
+        int fullPriceCount = countToBuy / 2 + countToBuy % 2;
+        int halfPriceCount = countToBuy - fullPriceCount;
+
+        double totalCost = fullPriceCount * purchasePrice + halfPriceCount * purchasePrice / 2;
+        count -= countToBuy;
+
+        if (printLeft) {
+            System.out.println("商品剩余库存为" + count);
+        }
+
+        return totalCost;
+    }
+
+    // >> TODO 参数可以是任何类型，包括自定义类型，甚至是自己的类型都没问题
+    public boolean totalValueBiggerThan(MerchandiseV2 merchandiseV2) {
+        return count * purchasePrice > merchandiseV2.purchasePrice * merchandiseV2.count;
+    }
 }
