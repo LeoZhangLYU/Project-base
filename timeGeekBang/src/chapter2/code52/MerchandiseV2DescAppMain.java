@@ -8,6 +8,6 @@ public class MerchandiseV2DescAppMain {
 
         // >> TODO 调用方法，完成对成员变量的操作。
         merchandiseV2.init("书桌", "DESK9527", 40, 999.9, 500);
-
+        merchandiseV2.describe();
     }
 }
