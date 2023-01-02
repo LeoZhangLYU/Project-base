@@ -1,4 +1,4 @@
-package com.geekbang.supermarket;
+package chapter2.code50.supermarket;
 
 public class MerchandiseV2 {
 
@@ -10,8 +10,8 @@ public class MerchandiseV2 {
 
     public void describe() {
         System.out.println("商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
-            + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
-            "。销售一个的毛利润是" + (soldPrice - purchasePrice));
+                + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
+                "。销售一个的毛利润是" + (soldPrice - purchasePrice));
     }
 
     public double calculateProfit() {

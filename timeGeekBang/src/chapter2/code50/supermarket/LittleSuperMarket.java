@@ -1,4 +1,4 @@
-package com.geekbang.supermarket;
+package chapter2.code50.supermarket;
 
 public class LittleSuperMarket {
     public String superMarketName;
