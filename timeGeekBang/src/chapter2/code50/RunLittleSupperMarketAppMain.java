@@ -1,7 +1,7 @@
-package com.geekbang;
+package chapter2.code50;
 
-import com.geekbang.supermarket.LittleSuperMarket;
-import com.geekbang.supermarket.MerchandiseV2;
+import chapter2.code50.supermarket.LittleSuperMarket;
+import chapter2.code50.supermarket.MerchandiseV2;
 
 public class RunLittleSupperMarketAppMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.geekbang.supermarket.mockthis;
+package chapter2.code50.supermarket.mockthis;
 
 public class LittleSuperMarketWithMerchandiseMock {
     public String superMarketName;

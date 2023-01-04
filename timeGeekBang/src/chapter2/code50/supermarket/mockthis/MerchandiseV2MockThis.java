@@ -1,4 +1,4 @@
-package com.geekbang.supermarket.mockthis;
+package chapter2.code50.supermarket.mockthis;
 
 public class MerchandiseV2MockThis {
 
@@ -10,8 +10,8 @@ public class MerchandiseV2MockThis {
 
     public void describe(MerchandiseV2MockThis This) {
         System.out.println("商品名字叫做" + This.name + "，id是" + This.id + "。 商品售价是" + This.soldPrice
-            + "。商品进价是" + This.purchasePrice + "。商品库存量是" + This.count +
-            "。销售一个的毛利润是" + (This.soldPrice - This.purchasePrice));
+                + "。商品进价是" + This.purchasePrice + "。商品库存量是" + This.count +
+                "。销售一个的毛利润是" + (This.soldPrice - This.purchasePrice));
     }
 
     public double calculateProfit() {

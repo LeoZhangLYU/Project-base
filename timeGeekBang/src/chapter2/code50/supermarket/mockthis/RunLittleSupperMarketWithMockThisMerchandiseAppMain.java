@@ -1,7 +1,4 @@
-package com.geekbang.supermarket.mockthis;
-
-import com.geekbang.supermarket.LittleSuperMarket;
-import com.geekbang.supermarket.mockthis.MerchandiseV2MockThis;
+package chapter2.code50.supermarket.mockthis;
 
 public class RunLittleSupperMarketWithMockThisMerchandiseAppMain {
     public static void main(String[] args) {
