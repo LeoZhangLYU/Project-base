@@ -12,8 +12,8 @@ public class Phone extends MerchandiseV2 {
     private String os;
 
     public Phone(
-            String name, String id, int count, double soldPrice, double purchasePrice, double screenSize,
-            double cpuHZ, int memoryG, int storageG, String brand, String os
+            String name, String id, int count, double soldPrice, double purchasePrice,
+            double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os
     ) {
         // >> TODO 使用super调用父类的构造方法，必须是子类构造方法的第一个语句
         // >> TODO 可以使用表达式
