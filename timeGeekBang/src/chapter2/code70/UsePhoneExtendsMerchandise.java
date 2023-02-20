@@ -14,5 +14,8 @@ public class UsePhoneExtendsMerchandise {
 
         phone.buy(100);
         phone.buy(3);
+
+        phone.accessParentProps();
+        phone.useSuper();
     }
 }

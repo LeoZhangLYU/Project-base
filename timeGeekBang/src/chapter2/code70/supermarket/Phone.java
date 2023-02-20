@@ -15,7 +15,7 @@ public class Phone extends MerchandiseV2 {
             String name, String id, int count, double soldPrice, double purchasePrice,
             double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os
     ) {
-
+        // >> TODO 可以认为，创建子类对象的时候，也就同时创建了一个隐藏的父类对象
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
@@ -23,6 +23,7 @@ public class Phone extends MerchandiseV2 {
         this.brand = brand;
         this.os = os;
 
+        // >> TODO 所以才能够set，对属性进行操作
         this.setName(name);
         this.setId(id);
         this.setCount(count);
@@ -38,8 +39,6 @@ public class Phone extends MerchandiseV2 {
 
     // >> TODO 题外话：属性是联动的，可能是有特殊意义的
     //    TODO 所以直接给属性赋值是危险的，因为没有办法检查新的值是否有意义，也没法对这个修改做联动的修改
-
-
     @Override
     public double buy(int count) {
         // >> TODO 这个方法里代码大部分和父类一样，肯定有方法解决
@@ -90,10 +89,32 @@ public class Phone extends MerchandiseV2 {
 
     // >> TODO 根据我们对覆盖的理解，Phone类里的descributePhone方法应该叫做describute
     // >> TODO 同样的，我们要想调用父类里的describute方法，试试看？
+    // >> TODO 使用super可以调用父类的方法和属性（当然必须满足访问控制符的控制）
     public void describe() {
         System.out.println("此手机商品属性如下");
         super.describe();
         System.out.println("手机厂商为" + brand + "；系统为" + os + "；硬件配置如下：\n" + "屏幕：" + screenSize + "寸\n" + "cpu主频" + cpuHZ + " GHz\n" + "内存" + memoryG + "Gb\n" + "存储空间" + storageG + "Gb");
+    }
+
+    // >> TODO super是子类和父类交流的桥梁，但是并不是父类的引用
+    // >> TODO 所以，super和this自引用不一样，不是简单可以模拟的（可以模拟的话不就是成了组合了吗！）
+    // public MerchandiseV2 getParent(){
+    //     return super;
+    // }
+    // public Phone getThisPhone(){
+    //     return this;
+    // }
+
+    // >> TODO 使用super可以调用父类的public属性，但是super不是一个引用
+    public void accessParentProps() {
+        System.out.println("父类里面的name属性：" + super.name);
+    }
+
+    public void useSuper() {
+        // >> TODO super的用法就像是一个父类的引用。他是继承的一部分，像组合的部分，但不是全部
+        super.describe();
+        super.buy(66);
+        System.out.println("父类里面的count属性：" + super.count);
     }
 
     public boolean meetCondition() {
