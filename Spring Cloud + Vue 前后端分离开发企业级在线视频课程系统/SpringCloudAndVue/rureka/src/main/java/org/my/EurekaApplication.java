@@ -1,13 +1,13 @@
-package com.my.springcloudandvue;
+package org.my;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringCloudAndVueApplication {
+public class EurekaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudAndVueApplication.class, args);
+        SpringApplication.run(EurekaApplication.class, args);
     }
 
 }
