@@ -15,8 +15,7 @@
     <name>SpringCloudAndVue</name>
     <description>SpringCloudAndVue</description>
     <modules>
-        <module>rureka</module>
-        <module>rureka</module>
+        <module>eureka</module>
     </modules>
     <properties>
         <java.version>17</java.version>

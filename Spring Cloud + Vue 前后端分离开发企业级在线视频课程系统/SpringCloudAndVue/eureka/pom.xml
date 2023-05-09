@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>org.my</groupId>
-    <artifactId>rureka</artifactId>
+    <artifactId>eureka</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
