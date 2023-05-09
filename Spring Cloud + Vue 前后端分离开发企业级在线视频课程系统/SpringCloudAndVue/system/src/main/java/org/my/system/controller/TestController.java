@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 如果返回的是页面，用Controller
  */
 @RestController
+//@RequestMapping("/system")
 public class TestController {
 
     @RequestMapping("/test")
