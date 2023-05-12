@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.my</groupId>
+    <groupId>org.my.geteway</groupId>
     <artifactId>geteway</artifactId>
 
     <dependencies>
