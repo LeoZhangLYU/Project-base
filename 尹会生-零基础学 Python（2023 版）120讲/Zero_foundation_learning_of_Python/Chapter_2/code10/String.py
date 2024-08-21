@@ -22,7 +22,7 @@ print(y[1:3])
 print(y[1:7:2])
 
 # TODO: 字符串的常用方法
-''' 
+'''
 str.count(sub[, start[, end]])
 返回子字符串sub 在[start，end]范围内非重叠出现的次数
 
