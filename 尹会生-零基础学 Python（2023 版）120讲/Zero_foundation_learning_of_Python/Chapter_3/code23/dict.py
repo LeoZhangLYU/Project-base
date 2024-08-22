@@ -34,7 +34,7 @@ for name, number in name_sn.items():
     print(name, number)
 
 # NOTE: 字典默认值
-default = name_sn.setdefault("toms")
+default = name_sn.setdefault("toms", "default")
 print(default)
 print(name_sn)
 
@@ -47,3 +47,21 @@ name_sn.popitem()
 print(name_sn)
 name_sn.pop("name1")
 print(name_sn)
+
+# NOTE: 字典的高级用法
+#  如果字典存在键key，返回它对应的值
+#  如果不存在，插入default的键key，并返回default 字典.setdefault(key[,default])
+print(name_sn["toms"])
+name_sn["toms"] = "777"
+print(name_sn["toms"])
+print(name_sn)
+
+# NOTE: 用新字典的“键”和“值”更新旧的字典，新字典的“键”和“值”优先
+new_name_sn = {list_name[0]: list_sn[0], list_name[1]: list_sn[1], list_name[2]: list_sn[2]}
+name_sn |= new_name_sn
+print(name_sn)
+
+# NOTE: 字典与其他数据类型的混合使用
+#  利用zip()函数合并两个列表为字典
+zip_name_sn = dict(zip(list_name, list_sn))
+print(zip_name_sn)
