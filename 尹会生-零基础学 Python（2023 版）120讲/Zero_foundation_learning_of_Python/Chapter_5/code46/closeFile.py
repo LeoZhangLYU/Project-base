@@ -1,0 +1,18 @@
+# NOTE: 为什么要及时关闭文件？
+#  文件写入函数执行完成后，写入部分仍然在内存中
+#  由于内存时易失存储，突然断电会导致数据丢失
+#  close()函数可以告知内核文件在内存中有更新
+#  write()函数写入后，必须显示close()
+#  read族函数读取后，不必close()，但建议关闭，避免文件描述符耗尽
+#  open()失败，不必close()
+f = open('./demo.txt', 'r', encoding='utf-8')
+data = f.read()
+print(data)
+f.close()
+
+# NOTE: with语句
+#  with语句可以使打开和关闭文件保持一致性，即：使用with语句打开的文件，离开with语句块作用域会自动关闭
+with open('./demo.txt', 'r', encoding='utf-8') as f:
+    data = f.read()
+
+print(data)
