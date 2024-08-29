@@ -1,3 +1,4 @@
+# NOTE: 将目录下所有的excel表格数据集成到一个表中
 from pathlib import PurePath, Path
 
 import openpyxl
