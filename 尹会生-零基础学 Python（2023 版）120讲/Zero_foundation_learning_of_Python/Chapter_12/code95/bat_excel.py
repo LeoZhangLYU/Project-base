@@ -13,12 +13,10 @@ for file in files:
     wb = openpyxl.load_workbook(file)
     ws = wb.active
     for row in ws.iter_rows():
+        data_row = []
         for cell in row:
-            print(cell.value)
-            if type(cell.value) == list or type(cell.value) == tuple or type(cell.value) == dict:
-                example_sheet.append(cell.value)
-            else:
-                example_sheet.append([cell.value])
+            data_row.append(cell.value)
+        example_sheet.append(data_row)
 
     # 获取全部工作簿
     print(wb.sheetnames)
