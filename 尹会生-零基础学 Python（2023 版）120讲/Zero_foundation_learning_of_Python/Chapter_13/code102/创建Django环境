@@ -1,0 +1,24 @@
+# 创建Django环境
+django-admin startproject mysite
+cd mysite
+python manage. py startapp myblog
+
+# 建立默认的admin数据模型，并访问admin页面
+# 修改settings.py
+mysql> create database django;
+$ python manage.py migrate
+$ python manage.py runserver 127.0.0.1:8080
+# http://127.0.0.1:8080/admin/
+
+# 建立管理页面的用户密码
+python manage.py createsuperuser
+
+# 创建模型
+# 参考
+https://docs.djangoproject.com/zh-hans/5.1/
+# 在admin.py注册model
+
+# 更新model,并同步数据
+python manage.py makemigrations
+python manage.py migrate
+
