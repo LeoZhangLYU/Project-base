@@ -48,10 +48,25 @@ def choose_one_ucb():
 
     return np.argmax(scores)
 
+# 汤普森采样算法，使用beta分布衡量期望
+def choose_one_beta():
+    # 求出每个老虎机出1的次数
+    count_1 = [sum(rewards[i]) for i in range(10)]
+
+    # 求出每个老虎机出0的次数
+    count_0 = [len(rewards[i]) - count_1[i] for i in range(10)]
+
+    # 对每个老虎机，根据beta分布采样一个值
+    samples = [np.random.beta(count_1[i] + 1, count_0[i] + 1) for i in range(10)]
+
+    return np.argmax(samples)
+
+
 def try_and_play():
     # 选择一个老虎机
     # i = choose_one()
-    i= choose_one_ucb()
+    # i= choose_one_ucb()
+    i= choose_one_beta()
 
 
     reward = 0
