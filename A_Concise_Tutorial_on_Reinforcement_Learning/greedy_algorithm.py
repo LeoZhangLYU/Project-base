@@ -24,9 +24,35 @@ def choose_one():
     # 选择平均返回值最高的老虎机
     return np.argmax(averages)
 
+# OPTIMIZE: UCB算法，更多的探索玩的更少的老虎机
+def choose_one_ucb():
+    # 求出每个老虎机各自的玩的次数
+    played_counts = np.array([len(rewards[i]) for i in range(10)])
+
+    # 求出上置信界
+    # 分子是总共完了多少次，取根号后让他的增长更慢
+    # 分母是每台老虎机玩的次数，乘以2让他增长更快
+    # 随着玩的次数越多，分母会很快超过分子的增长速度，导致分数越来越小
+    # 具体到每个老虎机上，就是玩的次数越多，上置信界越小
+    # 所以ucb衡量了每台老虎机的不确定性，玩的次数越少，不确定性越大，上置信界越高
+    fenzi = np.sqrt(np.log(sum(played_counts)))
+    fenmu = played_counts*2
+    ucb = fenzi / fenmu
+
+    # 大于1的ucb会被缩小，小于1的ucb会被放大，保持ucb恒定在一定的数值范围内
+    ucb = ucb**0.5
+
+    # 计算每个老虎机的平均返回值
+    averages = [np.mean(rewards[i]) for i in range(10)]
+    scores = averages + ucb
+
+    return np.argmax(scores)
+
 def try_and_play():
     # 选择一个老虎机
-    i = choose_one()
+    # i = choose_one()
+    i= choose_one_ucb()
+
 
     reward = 0
     # 根据老虎机的中奖概率决定是否中奖
