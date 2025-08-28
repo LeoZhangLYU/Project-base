@@ -10,7 +10,12 @@ rewards = [[1] for _ in range(10)]
 # 贪婪算法
 def choose_one():
     # 有小概率随机选择一个老虎机
-    if random.random() < 0.1:
+    # if random.random() < 0.1:
+    #     return random.choice(range(10))
+
+    # OPTIMIZE: 贪婪算法的改进，随机选择的概率逐渐下降
+    played_count = sum(len(rewards[i]) for i in range(10))
+    if random.random()<1/played_count:
         return random.choice(range(10))
 
     # 计算每个老虎机的平均返回值
