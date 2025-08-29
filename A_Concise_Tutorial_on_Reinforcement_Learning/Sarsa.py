@@ -16,7 +16,10 @@ def get_action(row,col):
 def get_update(row,col,action,reward,next_row,next_col,next_action):
 
     # 计算target
+    # Sarsa算法
     target = 0.9 * Q[next_row,next_col,next_action]
+    # Q-learning算法
+    # target = 0.9 * Q[next_row,next_col].max()
     target += reward
 
     # 计算value
@@ -53,7 +56,10 @@ def train():
             next_action = get_action(next_row,next_col)
 
             # 更新Q值
+            # Sarsa算法
             update = get_update(row,col,action,reward,next_row,next_col,next_action)
+            # Q-learning算法
+            # update = get_update(row,col,action,reward,next_row,next_col,None)
             Q[row,col,action] += update
 
             # 进入下一个状态，继续循环
