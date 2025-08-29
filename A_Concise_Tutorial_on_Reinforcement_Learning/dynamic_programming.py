@@ -79,8 +79,11 @@ def get_value():
             action_value = np.zeros(4)
             for action in range(4):
                 action_value[action] = get_qsa(row,col,action)
+            # NOTE: 策略迭代
             # 根据当前格子下4个动作的概率，计算当前格子的分数
-            new_values[row,col] = (action_value * pi[row,col]).sum()
+            # new_values[row,col] = (action_value * pi[row,col]).sum()
+            # NOTE: 价值迭代
+            new_values[row,col] = action_value.max()
     return new_values
 
 # 策略提升
