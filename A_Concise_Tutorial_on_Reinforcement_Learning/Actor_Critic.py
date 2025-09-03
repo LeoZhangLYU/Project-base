@@ -147,4 +147,4 @@ def train_actor_critic(env, actor, critic, num_episodes=100, gamma=0.99, lr=1e-3
 
 # =================== 5. 启动训练 ===================
 if __name__ == '__main__':
-    train_actor_critic(env, actor, critic, num_episodes=100)
+    train_actor_critic(env, actor, critic, num_episodes=5000,lr=1e-2)
