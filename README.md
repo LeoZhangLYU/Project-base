@@ -24,6 +24,8 @@
 
 1. 强化学习简明教程——————[【强化学习 简明教程 代码实战】](https://www.bilibili.com/video/BV1Ge4y1i7L6?p=8&vd_source=d84274f1eb448dcd25bcad06231cb118)
 
+1. 菜鸟教程-Julia教程——————[【菜鸟教程-Julia教程】](https://www.runoob.com/julia/julia-tutorial.html)
+
 
 #### 更新时间
 
@@ -35,4 +37,5 @@
 * 2024/8/20 极客时间\零基础学Python（2023版）
 * 2025/1/5 动手学深度学习
 * 2025/7/31 动手学强化学习
-* 2025.8.25 强化学习简明教程
+* 2025/8/25 强化学习简明教程
+* 2025/11/20 菜鸟教程-Julia教程
