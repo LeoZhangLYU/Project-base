@@ -26,6 +26,8 @@
 
 1. 菜鸟教程-Julia教程——————[【菜鸟教程-Julia教程】](https://www.runoob.com/julia/julia-tutorial.html)
 
+1. Claude Code 工程化实战——————[【Claude Code 工程化实战】](https://time.geekbang.org/column/intro/101113501)
+
 
 #### 更新时间
 
@@ -39,3 +41,4 @@
 * 2025/7/31 动手学强化学习
 * 2025/8/25 强化学习简明教程
 * 2025/11/20 菜鸟教程-Julia教程
+* 2026/4/2 Claude Code 工程化实战
